@@ -1,0 +1,27 @@
+{
+  "name": "chu-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/app.js",
+    "client": "npm start --prefix client/clientapp",
+    "start": "concurrently \"npm run server\" \" npm run client \" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "create-react-app": "^2.1.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.9",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "sequelize": "^4.42.0"
+  }
+}
