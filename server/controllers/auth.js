@@ -3,9 +3,9 @@ const validator = require("../validations/authValidator");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const SECRET_CODE = require("../utils/constants");
 
 
-const SECRET_CODE="secretCodesecretCode123";
 const EXPIRIES_IN="1";
 const CUSTOM_ERROR_CODE=780;
 
