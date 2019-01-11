@@ -23,6 +23,7 @@ exports.create = (req,res,next)=>{
                     io.emit("create",{
                         action:"create",
                         post:{
+                            id:createdPost.id,
                             content:createdPost.content,
                             username:creator.username
                         }
@@ -31,6 +32,7 @@ exports.create = (req,res,next)=>{
                 res.status(201).json({
                     message:"post created succesfully",
                     post:{
+                        id:createdPost.id,
                         content:createdPost.content,
                         username:creator.username
                     }
@@ -52,10 +54,10 @@ exports.getPosts=(req,res,next)=>{
     return Posts
             .findAll({include:["user"]})
             .then(posts=>{
-                console.log(posts)
                 res.status(200).json({
                     posts:posts.map(post=>{
                         return {
+                            id:post.id,
                             content:post.content,
                             username:post.user.username
                         }

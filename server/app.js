@@ -36,7 +36,12 @@ database
 manageSockets=(io)=>{
     io.on("connection",(socket)=>{
         console.log("connection ");
-       
-       })
+        
+        socket.on("typing",(data)=>{
+            socket.broadcast.emit("typing",data);
+           });
+           
+
+       });
        
 }
