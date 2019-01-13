@@ -72,3 +72,35 @@ exports.getPosts=(req,res,next)=>{
                 })
             })
 }
+
+exports.edit= async(req,res,next)=>{
+    console.log("editing ");
+    postId = req.params.postId;
+    newContent = req.body.content;
+    try{
+         // getting the post 
+        const post=  await Posts.findById(postId);
+        if(post){
+            post.content=newContent;
+            const updatedPost = await post.save();
+            res.status(201).json({
+                message:"the post was succesfully updated",
+                post:updatedPost
+            })
+       }else{
+           // the post wasn't found
+           //throw an error 
+           throw new Error("the id isn't valide");
+       }
+
+    }catch(error){
+        res.status(400).json({
+            message:"couldn't edit the post",
+            error:error.message
+        })       
+    }
+   
+
+
+
+}

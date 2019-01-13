@@ -10,4 +10,7 @@ router.post("/create",isAuth,messageController.create);
 //post/getAll =>GET
 router.get("/getAll",messageController.getPosts);
 
+// /post/edit/:postId=>POST
+router.put("/edit/:postId",isAuth,messageController.edit);
+
 module.exports=router;
