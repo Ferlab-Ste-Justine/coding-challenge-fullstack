@@ -74,7 +74,6 @@ exports.getPosts=(req,res,next)=>{
 }
 
 exports.edit= async(req,res,next)=>{
-    console.log("editing ");
     postId = req.params.postId;
     newContent = req.body.content;
     try{
