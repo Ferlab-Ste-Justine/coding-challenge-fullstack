@@ -31,6 +31,9 @@ exports.signUp = (req,res,next)=>{
                         SECRET_CODE,
                         {expiresIn:EXPIRIES_IN}
                         );
+                    // returning a response to the client 
+                    // containing the information about the user 
+                    // as well as the token  
                     res
                     .status(201)
                     .json({
@@ -50,6 +53,7 @@ exports.signUp = (req,res,next)=>{
             
                 })
             .catch(error=>{
+                // returning an error message 
                 res.json({
                     errors:error.message,
                     message:"an error occured",

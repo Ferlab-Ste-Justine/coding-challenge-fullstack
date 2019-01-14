@@ -13,12 +13,16 @@ exports.create = (req,res,next)=>{
             .findById(userId)
             .then(user=>{
                 creator=user;
+                // creating a post 
                 return user.createPost({
                     content:content
                 });
             })
             .then(createdPost=>{
                 const io = socket.getIo();
+                // emiting a create operation from the socket 
+                // this will notify all the users connected to the socket 
+                // that a new post has been created 
                 if(io){
                     io.emit("create",{
                         action:"create",
@@ -51,6 +55,8 @@ exports.create = (req,res,next)=>{
 
 
 exports.getPosts=(req,res,next)=>{
+    //finding all posts 
+    // joining with the user's table 
     return Posts
             .findAll({include:["user"]})
             .then(posts=>{
