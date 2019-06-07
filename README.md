@@ -27,12 +27,12 @@ Fork this repository, and submit your pull request providing documentation to th
 
 # One way to get started
 
-* Create your database and user
-createdb coding_test
-createuser coding_test_user
-psql coding_test -c 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO coding_test_user'
+### Create your database and user
+* createdb coding_test
+* createuser coding_test_user
+* psql coding_test -c 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO coding_test_user'
 
-* Initialize DATABASE
+### Initialize DATABASE
 RUN => sql/create.sql
 
 ### Socket Server
