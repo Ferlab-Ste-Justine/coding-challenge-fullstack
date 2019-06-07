@@ -1,0 +1,28 @@
+// Import this and use as configs
+const Config = {
+    REACT_ENV: process.env.REACT_ENV,
+    REACT_SOCKET_URL: process.env.REACT_SOCKET_URL,
+    BASE_URL: process.env.BASE_URL,
+
+    ACTIONS: {
+        INITIAL_MESSAGES: "INITIAL_MESSAGES",
+        UPDATE_MESSAGE: "UPDATE_MESSAGE",
+        UPDATE_MODAL : "UPDATE_MODAL",
+        REGISTER_FAIL: "REGISTER_FAIL",
+        REGISTER_SUCCESS: "REGISTER_SUCCESS",
+        LOGIN_FAIL: "LOGIN_FAIL",
+        LOGIN_SUCCESS: "LOGIN_SUCCESS",
+        REGISTER_LOADING: "REGISTER_LOADING",
+        LOGIN_LOADING: "LOGIN_LOADING",
+        GET_ACCOUNT_SUCCESS: "GET_ACCOUNT_SUCCESS",
+        GET_ACCOUNT_FAIL: "GET_ACCOUNT_FAIL",
+        GET_ACCOUNT_LOADING: "GET_ACCOUNT_LOADING"
+    },
+    
+    MODALS: {
+        REGISTER : "REGISTER",
+        LOGIN: "LOGIN"
+    }
+}
+
+export default Config

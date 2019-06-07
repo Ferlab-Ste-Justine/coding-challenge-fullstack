@@ -1,0 +1,17 @@
+@import "register";
+@import "login";
+
+.ReactModal__Content {
+    overflow: auto;
+    z-index: 110000;
+    width: 40%;
+    height: 478px;
+    background: whitesmoke;
+    margin: 100px auto;
+    max-width:1000px;
+    border-radius: 10px;
+
+    &:focus {
+        outline: none;
+    }
+}

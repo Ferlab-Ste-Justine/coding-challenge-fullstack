@@ -1,0 +1,51 @@
+#login_modal {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+    .modal_header {
+        display: flex;
+        justify-content: space-between;
+        background: #9c9c9c;
+        color: white;
+        align-items: center;
+        height: 80px;
+        
+        .text {
+            font-size: 35px;
+            margin: 15px;
+        }
+
+        .close {
+            width: 39px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        color: grey;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        input {
+            width: 200px;
+            height: 50px;
+            padding: 0 10px;
+            font-size: 20px;
+            margin: 2px 0;
+        }
+
+        .submit {
+            width: 150px;
+            height: 40px;
+            margin-top: 10px;
+            background: #aeeaae;
+            font-size: 15px;
+            border: 1px solid #40cc40;
+        }
+    }
+}

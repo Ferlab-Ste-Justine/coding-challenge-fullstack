@@ -1,0 +1,9 @@
+@import "landing";
+
+.main {
+    text-align: center;
+    height: calc(100vh - 90px);
+    top: 90px;
+    position: relative;
+    @extend .no_select;
+}
