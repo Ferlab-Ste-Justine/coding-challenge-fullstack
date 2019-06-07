@@ -6,7 +6,20 @@
         .message {
             padding: 0 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .name {
+                width: 15%;
+                overflow: hidden;
+            }
+
+            .info {
+                padding: 0 20px;
+                display: flex;
+                width: 80%;
+                overflow: hidden;
+            }
         }
     }
 }

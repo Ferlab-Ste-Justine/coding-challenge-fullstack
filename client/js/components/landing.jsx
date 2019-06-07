@@ -38,7 +38,7 @@ class Landing extends Component {
         return (
             <div key={`message-${i}`} className="message">
                 <div className="name">{message.display_name}</div>
-                <div className="message">{message.info}</div>
+                <div className="info">{message.info}</div>
             </div>
         )
     }
