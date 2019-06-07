@@ -46,7 +46,6 @@ if(typeof window !== 'undefined') {
                         <div>
                             <Nav />
                             <div className="main">
-                                <ToastContainer />
                                 <Switch>
                                     {/* "key" change hack to make sure the components are remounted when you click on the same link */}
                                     <Route exact path="/"              component={ createWithNewKey(Landing) }/>
