@@ -2,6 +2,8 @@ package org.crstejustine.wall.authentication
 
 import java.time.Clock
 
+import pdi.jwt.{Jwt, JwtClaim}
+
 import scala.util.{Failure, Success, Try}
 
 class ValidateToken(config: TokenConfig)(implicit clock: Clock) extends (Token => Try[JwtClaim]) {

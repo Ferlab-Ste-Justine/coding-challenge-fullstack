@@ -24,6 +24,7 @@ Fork this repository, and submit your pull request providing documentation to th
 
 ### Run API
 * Load project in IntelliJ
+* Execute "sbt clean update"
 * Execute "sbt run"
 * API is available at http://localhost:9000
 * You could use the following endpoint :

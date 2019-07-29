@@ -2,6 +2,14 @@ package org.crstejustine.wall
 
 import java.time.Clock
 
+import org.crstejustine.wall.authentication._
+import org.crstejustine.wall.message.{MessageRequest, UpdateMessage}
+import org.crstejustine.wall.ws.SameOriginCheck
+import org.slf4j.{Logger, LoggerFactory}
+import play.api.db.Database
+import play.api.libs.json.{Json, _}
+import play.api.mvc._
+
 import scala.concurrent.ExecutionContext
 
 class Controller(authenticateUser: (Username, Password) => Either[AuthenticationError, (User, Token)],

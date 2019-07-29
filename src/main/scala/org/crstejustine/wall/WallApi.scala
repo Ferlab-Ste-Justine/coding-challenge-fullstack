@@ -2,6 +2,18 @@ package org.crstejustine.wall
 
 import java.time.Clock
 
+import com.typesafe.config.Config
+import org.crstejustine.wall.authentication.TokenConfig
+import org.slf4j.LoggerFactory
+import pdi.jwt.JwtAlgorithm
+import pdi.jwt.algorithms.JwtHmacAlgorithm
+import play.api.BuiltInComponents
+import play.api.db.Database
+import play.api.mvc._
+import play.api.routing.Router
+import play.api.routing.sird._
+import play.core.server.AkkaHttpServerComponents
+
 class WallApi(port: Option[Int] = None, config: Config)(implicit db: Database) extends AkkaHttpServerComponents with BuiltInComponents {
 
   private val logger = LoggerFactory.getLogger(classOf[WallApi])

@@ -1,5 +1,9 @@
 package org.crstejustine.wall.message
 
+import org.crstejustine.wall.authentication.Message
+import org.crstejustine.wall.utils.{DBError, NoRow}
+import play.api.db.Database
+
 class UpdateMessageInDB(implicit db: Database) extends ((Long, Message) => Either[DBError, Unit]) {
 
   override def apply(userId: Long, message: Message): Either[DBError, Unit] = db.withConnection { conn =>

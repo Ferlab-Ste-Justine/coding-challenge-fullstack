@@ -2,6 +2,10 @@ package org.crstejustine.wall
 
 import java.sql.Statement.RETURN_GENERATED_KEYS
 
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, Suite}
+import play.api.db.evolutions.Evolutions
+import play.api.db.{Database, Databases}
+
 trait DatabaseHelper extends BeforeAndAfterAll with BeforeAndAfterEach { this: Suite =>
 
   implicit val db: Database = Databases.inMemory(

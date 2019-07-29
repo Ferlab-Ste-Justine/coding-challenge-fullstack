@@ -2,6 +2,10 @@ package org.crstejustine.wall.authentication
 
 import java.time.Clock
 
+import pdi.jwt._
+import play.api.http.HeaderNames
+import play.api.mvc._
+
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success, Try}
 

@@ -1,5 +1,7 @@
 package org.crstejustine.wall.authentication
 
+import org.crstejustine.wall.UnitTest
+
 class AuthenticateUserByCredentialTest extends UnitTest {
   private val validateUser = (username: Username, _: Password) => Right(User(1, username, Member))
   private val generateToken = (user: User) => Token(s"Token for ${user.username.value}")

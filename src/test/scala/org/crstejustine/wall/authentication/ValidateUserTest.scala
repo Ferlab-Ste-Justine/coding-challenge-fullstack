@@ -1,5 +1,9 @@
 package org.crstejustine.wall.authentication
 
+import org.crstejustine.wall.UnitTest
+import org.crstejustine.wall.user.UserRow
+import org.crstejustine.wall.utils.{DBError, NoRow}
+
 class ValidateUserTest extends UnitTest {
   private val findUserFromDB:Username => Either[DBError, UserRow] = username => Right(UserRow(1, username.value, "pwd", Member.name))
   private val hashPassword = (pwd:String) => s"hashed $pwd"

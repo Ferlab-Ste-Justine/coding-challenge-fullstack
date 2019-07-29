@@ -1,5 +1,8 @@
 package org.crstejustine.wall.ws
 
+import org.slf4j.Logger
+import play.api.mvc.RequestHeader
+
 trait SameOriginCheck {
 
   def logger: Logger

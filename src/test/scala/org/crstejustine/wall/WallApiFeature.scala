@@ -1,5 +1,11 @@
 package org.crstejustine.wall
 
+import org.crstejustine.wall.utils.MD5
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.JsonBodyReadables._
+import play.api.libs.ws.JsonBodyWritables._
+import play.api.test.Helpers._
+
 class WallApiFeature extends FeatureHelper {
   feature("Authentication") {
 

@@ -1,5 +1,9 @@
 package org.crstejustine.wall.authentication
 
+import org.crstejustine.wall.user.{FindUserFromDB, UserRow}
+import org.crstejustine.wall.utils.{DBError, MD5, NoRow}
+import play.api.db.Database
+
 class ValidateUser(
                     findUserFromDB: Username => Either[DBError, UserRow],
                     hashPassword: String => String

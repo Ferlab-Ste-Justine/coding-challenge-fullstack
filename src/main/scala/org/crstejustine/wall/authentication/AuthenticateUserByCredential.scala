@@ -2,6 +2,8 @@ package org.crstejustine.wall.authentication
 
 import java.time.Clock
 
+import play.api.db.Database
+
 class AuthenticateUserByCredential(validateUser: (Username, Password) => Either[AuthenticationError,User],
                                    generateToken: User => Token) extends ((Username, Password) => Either[AuthenticationError, (User, Token)]){
   override def apply(username: Username, pwd: Password): Either[AuthenticationError, (User, Token)] =

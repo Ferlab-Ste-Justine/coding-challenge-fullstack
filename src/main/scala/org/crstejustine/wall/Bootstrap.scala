@@ -1,5 +1,10 @@
 package org.crstejustine.wall
 
+import com.typesafe.config.ConfigFactory
+import play.api.db.evolutions.Evolutions
+import play.api.db.{Database, HikariCPConnectionPool, PooledDatabase}
+import play.api.{Environment, Mode}
+
 object Bootstrap extends App {
 
   val port: Option[String] = if (args.length >= 1 && args(0).startsWith("-port=")) Some(args(0).split("=")(1)) else None

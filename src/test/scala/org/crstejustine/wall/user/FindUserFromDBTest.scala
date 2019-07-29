@@ -1,5 +1,9 @@
 package org.crstejustine.wall.user
 
+import org.crstejustine.wall.authentication.Username
+import org.crstejustine.wall.utils.NoRow
+import org.crstejustine.wall.{DatabaseHelper, UnitTest}
+
 class FindUserFromDBTest extends UnitTest with DatabaseHelper {
 
   "FindUserFromDB" should "return user from username" in {
