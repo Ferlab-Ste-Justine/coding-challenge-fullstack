@@ -1,0 +1,8 @@
+package org.crstejustine.wall.authentication
+
+trait AuthenticationError
+
+case object WrongPassword extends AuthenticationError
+case object UnknownUser extends AuthenticationError
+case object UnknownRole extends AuthenticationError
+case object NotAllowedAccess extends AuthenticationError
