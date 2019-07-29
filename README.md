@@ -25,11 +25,12 @@ Fork this repository, and submit your pull request providing documentation to th
 ### Run API
 * Load project in IntelliJ
 * Execute "sbt clean update"
+* Run "docker-compose -f docker/docker-compose.yml up"
 * Execute "sbt run"
 * API is available at http://localhost:9000
 * You could use the following endpoint :
     * GET http://localhost:9000 : To check if the application is running
-    * POST /users/authenticate with body {"username":"pumpkins", "password":"test"} to authenticate as member and receive token
+    * POST /users/authenticate with body {"username":"member", "password":"test"} to authenticate as member and receive token
     * PUT /users/1/message with body {"message": "New message"} and token in header "Authorization" to update message
 
 
