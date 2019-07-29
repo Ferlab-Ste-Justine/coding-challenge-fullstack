@@ -27,8 +27,8 @@ Fork this repository, and submit your pull request providing documentation to th
 * Execute "sbt run"
 * API is available at http://localhost:9000
 * You could use the following endpoint :
-** GET http://localhost:9000 : To check if the application is running
-** POST /users/authenticate with body {"username":"pumpkins", "password":"test"} to authenticate as member and receive token
-** PUT /users/1/message with body {"message": "New message"} and token in header "Authorization" to update message
+    * GET http://localhost:9000 : To check if the application is running
+    * POST /users/authenticate with body {"username":"pumpkins", "password":"test"} to authenticate as member and receive token
+    * PUT /users/1/message with body {"message": "New message"} and token in header "Authorization" to update message
 
 
