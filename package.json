@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.88.1",
+    "serve-handler": "^6.1.1",
+    "ws": "^7.1.2"
+  },
+  "name": "technical-challenge",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.4.2",
+    "babel-loader": "^8.0.4",
+    "core-js": "3",
+    "extract-loader": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "scripts": {
+    "start:dev": "cd client && webpack-dev-server --open --mode development",
+    "build": "cd client && webpack --mode production",
+    "start": "node server/index.js"
+  },
+  "author": "Alexander Vados <alex@cedarcedar.com>",
+  "license": "MIT",
+  "description": ""
+}
