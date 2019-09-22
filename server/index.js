@@ -29,8 +29,7 @@ wss.on('connection', (socket) => {
     }
 
     const token = jwt.sign({
-      expiresIn: '50000s',
-      exp: Math.floor(Date.now() / 1000) + 50000,
+      expiresIn: '1h',
       username
     }, JWT_SECRET);
 
