@@ -15,7 +15,7 @@ const Messages = ({
         {
           Object.keys(messages).map((author, i) => {
             return (
-              <Card color='blue' key={i}>
+              <Card color={ author === loggedInUser ? 'green' : 'blue'} key={i}>
                 <Card.Content>
                   <Card.Header>{`${author} ${author === loggedInUser ? ' | You' : ''}`}</Card.Header>
                   <Card.Meta>
