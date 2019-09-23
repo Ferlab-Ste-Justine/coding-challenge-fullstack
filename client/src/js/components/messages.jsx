@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Input, Container, Card, Icon, Grid } from 'semantic-ui-react';
+import { Input, Container, Card, Icon, Grid, Divider } from 'semantic-ui-react';
 import { updateMessage } from '../actions/messages';
 
 const Messages = ({ 
@@ -11,7 +11,7 @@ const Messages = ({
 }) =>  {
   return (
     <Container>  
-      <Grid centered stackable columns={3}>
+      <Grid stackable columns={3}>
         {
           messages.map(({ author, text }, i) => {
             return (
@@ -30,9 +30,10 @@ const Messages = ({
                   <Card.Description style={{ whiteSpace: 'pre-wrap', color: 'rgba(0,0,0,1)' }}>
                     {
                       isAuthenticated && author === loggedInUser ?
-                      <Container>
+                      <div>
                         <Input placeholder="Update your message" onChange={updateMessage} />
-                      </Container>
+                        <Divider />
+                      </div>
                       : null
                     }
 
