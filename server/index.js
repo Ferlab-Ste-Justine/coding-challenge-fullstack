@@ -14,7 +14,7 @@ const JWT_SECRET = 'super-secret-key';
 wss.on('connection', (socket) => {
   
   // First thing we want to do is send the current state of the messages on the server to the newly connected client.
-  socket.send('updatedMessage', messageState);
+  socket.send('currentMessageState', messageState);
 
   socket.on('logIn', (data) => {
 
@@ -78,7 +78,7 @@ wss.on('connection', (socket) => {
     socket.send('token', token);
 
     // Broadcast the new/updated messages state to ALL connected sockets.
-    wss.broadcast('updatedMessage', messageState);
+    wss.broadcast('currentMessageState', messageState);
   });
 
   socket.on('updateMessage', (data) => {
@@ -95,7 +95,7 @@ wss.on('connection', (socket) => {
       };      
       
       // Broadcast the new/updated messages state to ALL connected sockets.
-      wss.broadcast('updatedMessage', messageState);
+      wss.broadcast('currentMessageState', messageState);
       
     } catch (err) {
       socket.send('error', {

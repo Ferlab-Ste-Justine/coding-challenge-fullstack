@@ -16,7 +16,7 @@ export function updateUser(update) {
   };
 }
 
-// This action connects to the websocket server, but does not authenticate.
+// This action connects to the websocket server, but does NOT authenticate.
 export function connectUser() {
   return async (dispatch, _, socket) => {
     try {
@@ -25,7 +25,7 @@ export function connectUser() {
       const onDisconnect = () => dispatch(updateUser({ connected: false }));
 
       // All users should get message updates as a firehose once connected to the wss
-      socket.on('updatedMessage', (messages) => {
+      socket.on('currentMessageState', (messages) => {
         dispatch(updateMessages(messages))
       });
 
