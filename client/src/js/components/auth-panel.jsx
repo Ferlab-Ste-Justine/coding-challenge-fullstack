@@ -7,8 +7,8 @@ class AuthPanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'mika',
-      password: 'foobar',
+      username: '',
+      password: '',
       errorMessage: '',
       interval: null,
       isLoading: false
