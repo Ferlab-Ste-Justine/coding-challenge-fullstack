@@ -7,9 +7,9 @@ let usersPasswords = {
 
 // This would also be in a DB
 let messageState = {
-  'mika': 'You win some, you lose some.',
-  'sandy': 'Don\'t let the choice that you didn\'t make weigh you down.',
-  'fran': 'It is not the time which needs to be managed; it is ourselves.',
+  'mika': 'Eating lunch in the park today! 🌯🌲',
+  'sandy': '🎵🎹 Listening to James Blake',
+  'fran': '"It is not the time which needs to be managed; it is ourselves." \n-Author Unknown',
 };
 
 module.exports = {

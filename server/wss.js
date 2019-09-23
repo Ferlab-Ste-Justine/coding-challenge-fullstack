@@ -1,5 +1,5 @@
 const WebSocket = require('ws');
-const { EventEmitter } = require('events')
+const { EventEmitter } = require('events');
 
 // Little helper module to create an API that closer resembles socket.io, but using the `ws` library in node.js
 class WebSocketServer extends EventEmitter {

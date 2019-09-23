@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { connectUser } from '../actions/user';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container, Grid, Menu, Dimmer, Loader, Divider } from 'semantic-ui-react';
 import AuthPanel from './auth-panel';
 import Messages from './messages';
 
@@ -10,20 +10,29 @@ class App extends React.Component {
     await this.props.connectToWebsocketServer();
   }
 
-  messageChange(evt) {
-    this.props.updateMessage(evt.target.value);
-  }
-
   render() {
+    if (!this.props.isConnected) {
+      return (
+        <Dimmer inverted active>
+          <Container>
+            <Loader inverted active>      
+              {'Connecting ...'}         
+            </Loader>
+          </Container>
+        </Dimmer>
+      );
+    }
+
     return (
       <>
         <Container>
-          <Grid stackable>
-            <Grid.Column width={12}>    
+          <Menu secondary>
+            <Menu.Item>
               <h1>{'The Wall'}</h1>
-            </Grid.Column>
-            <AuthPanel />
-          </Grid>
+            </Menu.Item>
+          </Menu>
+          <AuthPanel />
+          <Divider />
         </Container>
 
         <Messages />
@@ -31,6 +40,12 @@ class App extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isConnected: state.user.connected
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -40,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,6 +1,4 @@
 node_modules/*
 static/js/*
-static/css/*
-static/assets/sounds/*
 *.log
 *.DS_Store
