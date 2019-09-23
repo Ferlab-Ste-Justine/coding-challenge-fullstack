@@ -120,15 +120,25 @@ class AuthPanel extends React.Component {
             : null
           }            
           
-          <Button onClick={this.login.bind(this)}>{'Log In'}</Button>
-          <Button onClick={this.signUp.bind(this)}>{'Sign Up'}</Button>
+          <Button 
+            disabled={!username.length || !password.length } 
+            onClick={this.login.bind(this)}
+          >
+            {'Log In'}
+          </Button>
+
+          <Button 
+            disabled={!username.length || !password.length } 
+            onClick={this.signUp.bind(this)}
+          >
+            {'Sign Up'}
+          </Button>
         </Form>
       </Segment>
     )
   }
 }
 
-// TODO: Do this better
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.user.authenticated
