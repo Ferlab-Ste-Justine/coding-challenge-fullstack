@@ -59,9 +59,10 @@ const mapStateToProps = (state) => {
 
   // If the user is authenticated, sort them to the top of the card list.
   if (user.authenticated) {
-    messagesArray = messagesArray.sort((a) => {
+    messagesArray = messagesArray.sort((a, b) => {
       if (a.author === loggedInUser) return -1;
-      return 1;
+      if (b.author === loggedInUser) return 1;
+      return 0;
     });
   }
 
