@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Input, Form, Grid, Message, Dimmer, Loader, Container, Segment } from 'semantic-ui-react';
+import { Button, Input, Form, Message, Dimmer, Loader, Container, Segment } from 'semantic-ui-react';
 import { logIn, signUp, resetUser } from '../actions/user';
 
 class AuthPanel extends React.Component {
