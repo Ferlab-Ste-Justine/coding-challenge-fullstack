@@ -13,7 +13,7 @@ const Messages = ({
     <Container>  
       <Grid centered stackable columns={3}>
         {
-          Object.keys(messages).map((author, i) => {
+          messages.map(({ author, text }, i) => {
             return (
               <Grid.Column key={i}>
               <Card fluid color={ author === loggedInUser ? 'green' : 'blue'}>
@@ -26,16 +26,17 @@ const Messages = ({
                     }
                     {`${author}`}
                   </Card.Header>
-                  <Card.Meta>
-
-                  </Card.Meta>
-                  <Card.Description style={{ whiteSpace: 'pre-wrap' }}>
+                                    
+                  <Card.Description style={{ whiteSpace: 'pre-wrap', color: 'rgba(0,0,0,1)' }}>
                     {
                       isAuthenticated && author === loggedInUser ?
-                      <Container><Input placeholder="thoughts" onChange={updateMessage} /></Container>
+                      <Container>
+                        <Input placeholder="Update your message" onChange={updateMessage} />
+                      </Container>
                       : null
                     }
-                    {messages[author]}
+
+                    {text}
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -51,10 +52,22 @@ const Messages = ({
 
 const mapStateToProps = (state) => {
   const { user, messages } = state;
+  const loggedInUser = user.username;
+  const isAuthenticated = user.authenticated;
+  let messagesArray = Object.keys(messages).map(author => ({ author, text: messages[author] }));
+
+  // If the user is authenticated, sort them to the top of the card list.
+  if (user.authenticated) {
+    messagesArray = messagesArray.sort((a) => {
+      if (a.author === loggedInUser) return -1;
+      return 1;
+    });
+  }
+
   return {
-    loggedInUser: user.username,
-    isAuthenticated: user.authenticated,
-    messages: messages
+    loggedInUser,
+    isAuthenticated,
+    messages: messagesArray
   };
 }
 
