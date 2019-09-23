@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Input, Container, Card } from 'semantic-ui-react';
+import { Input, Container, Card, Icon, Grid } from 'semantic-ui-react';
 import { updateMessage } from '../actions/messages';
 
 const Messages = ({ 
@@ -11,29 +11,39 @@ const Messages = ({
 }) =>  {
   return (
     <Container>  
-      <Card.Group>
+      <Grid centered stackable columns={3}>
         {
           Object.keys(messages).map((author, i) => {
             return (
-              <Card color={ author === loggedInUser ? 'green' : 'blue'} key={i}>
+              <Grid.Column key={i}>
+              <Card fluid color={ author === loggedInUser ? 'green' : 'blue'}>
                 <Card.Content>
-                  <Card.Header>{`${author} ${author === loggedInUser ? ' | You' : ''}`}</Card.Header>
+                  <Card.Header>
+                    { 
+                      author === loggedInUser ? 
+                      <Icon name='star' color="green"/> 
+                      : null 
+                    }
+                    {`${author}`}
+                  </Card.Header>
                   <Card.Meta>
+
+                  </Card.Meta>
+                  <Card.Description style={{ whiteSpace: 'pre-wrap' }}>
                     {
                       isAuthenticated && author === loggedInUser ?
-                      <Input placeholder="thoughts" onChange={updateMessage} /> 
+                      <Container><Input placeholder="thoughts" onChange={updateMessage} /></Container>
                       : null
                     }
-                  </Card.Meta>
-                  <Card.Description>
                     {messages[author]}
                   </Card.Description>
                 </Card.Content>
               </Card>
+              </Grid.Column>
             );
           })
         }
-      </Card.Group>
+      </Grid>
     </Container>
   )
 }
